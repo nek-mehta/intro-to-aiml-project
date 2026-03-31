@@ -1,52 +1,36 @@
 # intro-to-aiml-project
 
-Food Quality Predictor 🍔
+# Food Quality Predictor 🍔
 Python-based Machine Learning application, which predicts the quality score of a restaurant based on four major operational parameters. This project was created as a part of an Intro to AI & ML course.
 
-# 📖 Overview
-The Food Quality Predictor is a program that utilizes the Linear Regression model to determine the impact of various factors on the final performance of the restaurant. By training on the data set containing information about 15 restaurants, the program is capable of predicting the "Final Score" on a scale of 45 given the new data.
-
-# Key Features
-- Command-Line Interface (CLI): Simple interactive prompts (train, predict, exit).
-- Data-Driven: Loads and processes restaurant metrics from a CSV/Excel file.
-- Accuracy Tracking: Reports the Mean Absolute Error (MAE) to show how precise the predictions are.
-
-# 🛠️ Tech Stack
-- Language: Python 3.14
-- Data Handling: pandas
-- Machine Learning: scikit-learn (Linear Regression)
-- Environment: Visual Studio Code
-
-# 🚀 Getting Started
-Prerequisites:
-Ensure you have Python installed. You will need to install the following libraries:
-bash
-- pip install pandas scikit-learn
-
-# File Setup
-Ensure your directory is structured as follows:
-
-
-📂 Project_Folder
- ├── model.py               # Main application logic
- └── restaurant_marks.csv   # Dataset containing the 15 restaurant records
-
-# 📋 Usage
-Run the script using the terminal:
-python model.py
-
-Once running, use the following commands:
-
-- train -> Trains the ML model on the dataset and displays the MAE (Current Target: 0.69).
-- predict -> Prompts you to enter values for Cleanliness, Raw Material, Employee, and Taste. Returns a predicted score out of 45.
-- exit -> Safely closes the application.
-
-# 📊 Dataset Features
-The model evaluates restaurants based on:
-- Cleanliness: Hygiene standards of the facility.
-- Raw Material: Quality of ingredients used.
-- Employee: Staff performance and service quality.
-- Taste: The flavor profile and food quality.
+# How to Use:
+- Copy the code provided in this repository into Visual Studio Code or any other IDE and import pandas scikit-learn
+- Install the data folder which has the restaurant_marks.csv file
+Commands:
+train : Train the model using data from data/restaurant_marks.csv
+predict : Enter your scores and get the guessed final score
+exit : To close the program
+Input Scores for Predicting:
+cleanliness_avg: Score out of 10
+rmaterial_avg: Score out of 10
+employee_percent: Enter employee quality percent (0 to 100). The program changes it internally as:
+Less than 75% = 0 points
+75% to 80% = 1 point
+80% to 85% = 2 points
+85% to 90% = 3 points
+90% to 95% = 4 points
+95% to 100% = 5 points
+project_score: Score out of 20
+Output:
+The guessed final score is out of 45.
+Data File:
+The data/restaurant_marks.csv file should have these columns:
+cleanliness_avg, rmaterial_avg, employee_percent, taste_score, final_score
+Notes:
+Run 'train' before 'predict'
+Model saves weights in model_weights.txt after training
+No extra software needed, simple Python code
+This is a student project to learn basic machine learning with Python.
 
 
 
